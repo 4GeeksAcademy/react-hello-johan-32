@@ -1,11 +1,280 @@
-/* 
+html,
+body,
+#root {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: #000;
+}
 
-*/
+* {
+	box-sizing: border-box;
+}
+
+.mock-browser-page {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #000;
+	padding: 30px;
+}
+
+.browser-window {
+	width: 1180px;
+	height: 560px;
+	background: #f4f4f4;
+	border: 2px solid #cfcfcf;
+	box-shadow: 0 0 0 1px #ddd;
+	overflow: hidden;
+}
+
+.browser-topbar {
+	height: 52px;
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
+	background: #f3f3f3;
+	border-bottom: 1px solid #cfcfcf;
+	gap: 14px;
+}
+
+.browser-nav {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	min-width: 90px;
+}
+
+.nav-icon {
+	font-size: 28px;
+	color: #b8b8b8;
+	line-height: 1;
+}
+
+.address-bar {
+	height: 38px;
+	flex: 1;
+	background: #fff;
+	border: 1px solid #c9c9c9;
+	display: flex;
+	align-items: center;
+	padding: 0 12px;
+	gap: 10px;
+	font-size: 18px;
+	color: #555;
+}
+
+.secure-lock {
+	font-size: 18px;
+}
+
+.secure-text {
+	color: #3b8b52;
+	font-weight: 600;
+}
+
+.address-separator {
+	color: #9d9d9d;
+}
+
+.address-text {
+	color: #2c2c2c;
+	flex: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.star {
+	color: #666;
+	font-size: 24px;
+}
+
+.browser-icons {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.top-icon {
+	width: 24px;
+	height: 24px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.top-icon.blue {
+	color: #2ea7db;
+}
+
+.top-icon.orange {
+	color: #d85a41;
+}
+
+.top-icon.sky {
+	color: #56aee6;
+}
+
+.top-icon.dark {
+	color: #5d6871;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.top-icon.gray {
+	color: #c3c3c3;
+}
+
+.top-icon.red {
+	color: #d8654d;
+}
+
+.browser-content {
+	display: flex;
+	height: calc(100% - 52px);
+}
+
+.left-panel {
+	width: 34%;
+	background: #efefef;
+	border-right: 1px solid #cfcfcf;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.right-panel {
+	width: 66%;
+	background: #f7f7f7;
+	display: flex;
+	flex-direction: column;
+}
+
+.traffic-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.traffic-top {
+	width: 22px;
+	height: 142px;
+	background: #000;
+}
+
+.traffic-box {
+	width: 142px;
+	background: #000;
+	border-radius: 16px;
+	padding: 16px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	margin-top: 0;
+}
+
+.light {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+
+.red {
+	background: #cc1b1b;
+}
+
+.yellow {
+	background: #d06d1b;
+}
+
+.green {
+	background: #17a53e;
+}
+
+.selected {
+	box-shadow:
+		0 0 28px 12px rgba(255, 248, 213, 0.92),
+		0 0 58px 24px rgba(255, 248, 213, 0.7),
+		0 0 90px 42px rgba(255, 248, 213, 0.48);
+}
+
+.devtools-toolbar {
+	height: 52px;
+	border-bottom: 1px solid #d4d4d4;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 14px;
+	background: #f3f3f3;
+}
+
+.devtools-left,
+.devtools-right {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.tool-button {
+	font-size: 22px;
+	color: #7a7a7a;
+}
+
+.devtools-tabs {
+	display: flex;
+	align-items: center;
+	gap: 28px;
+	margin-left: -80px;
+}
+
+.tab {
+	font-size: 18px;
+	color: #444;
+	padding-bottom: 8px;
+}
+
+.tab.active {
+	border-bottom: 3px solid #4c8fd8;
+	color: #222;
+}
+
+.code-view {
+	flex: 1;
+	padding: 12px 16px;
+	background: #fbfbfb;
+	font-family: Consolas, Monaco, "Courier New", monospace;
+	font-size: 16px;
+	line-height: 1.55;
+	color: #7b3fb7;
+	overflow: hidden;
+}
+
+.code-line {
+	white-space: pre-wrap;
+	color: #8a4cb2;
+}
+
+.active-line {
+	background: #dfdfdf;
+	position: relative;
+}
+
+.active-line::after {
+	content: "== $0";
+	position: absolute;
+	right: 12px;
+	color: #666;
+}
